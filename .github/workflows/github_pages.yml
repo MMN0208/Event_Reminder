@@ -33,5 +33,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ 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 }}
           publish_dir: ./build
