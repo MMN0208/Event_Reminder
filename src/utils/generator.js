@@ -23,7 +23,7 @@ function toTimeString(day, month, time) {
 
 function generateEvent(clss) {
     let summary = ''
-    if (clss.type == 0) {
+    if (clss.type === 0) {
         summary = 'Thi giữa kỳ ' + clss.name;
     }
     else {

@@ -5,7 +5,7 @@ function CalendarSelector(props) {
         return <div key={eachClass.signature} className="class-item_wrapper">
             <input id={eachClass.signature} type='checkbox' name={eachClass.name} value={eachClass.signature} onChange={props.changeHandler} checked={eachClass.selected} className="class-selector_checkbox" />
             <label htmlFor={eachClass.signature} className='class-selector_label'>
-                {(eachClass.type == 0 ? 'Giữa kỳ ' : 'Cuối kỳ ') + eachClass.name}
+                {(eachClass.type === 0 ? 'Giữa kỳ ' : 'Cuối kỳ ') + eachClass.name}
             </label>
             <br />
         </div>
