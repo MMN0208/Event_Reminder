@@ -91,7 +91,7 @@ class App extends React.Component {
             <GuideLine
               num={1}
               text={
-                "Copy and paste the exam schedule of subject(s) you want to export here."
+                "Copy and paste the exam schedule of semester(s) you want to export here."
               }
             />
             <CalendarInputField
