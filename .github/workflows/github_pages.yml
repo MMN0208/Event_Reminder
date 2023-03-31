@@ -25,6 +25,7 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
+      - run: npx browserslist@latest --update-db
       - run: npm ci
       - run: npm run build
 
