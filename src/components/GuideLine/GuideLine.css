@@ -1,0 +1,22 @@
+.guide-line_wrapper {
+  display: flex;
+  align-items: center;
+  margin: 0.8rem 0 0.8rem 0;
+}
+.guide-line_number {
+  font-size: 1.5rem;
+  display: flex;
+  background-color: var(--guideline-fill);
+  color: var(--guideline-inner);
+  text-align: center;
+  min-width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+  font-weight: 500;
+}
+.guide-line_description {
+  font-size: 1.2rem;
+}

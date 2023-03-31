@@ -1,0 +1,51 @@
+.class-selector_checkbox {
+  display: none;
+}
+.class-selector_label::before {
+  content: "";
+  display: inline-block;
+  left: 0;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 3px solid var(--border-color);
+  border-radius: 5px;
+  vertical-align: middle;
+  margin-right: 10px;
+  transition: all 0.06s ease-out;
+}
+@media (max-width: 700px) {
+  .class-selector_label::before {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+.calendar-selector_wrapper {
+  background-color: var(--container-fill);
+  border: 3px solid var(--border-color);
+  border-radius: 10px;
+  padding: 10px;
+  white-space: nowrap;
+  overflow-y: auto;
+}
+
+.class-selector_label {
+  font-size: 1.2rem;
+
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.class-selector_checkbox:checked + .class-selector_label::before {
+  background-color: var(--border-color);
+}
+
+.class-item_wrapper {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                   supported by Chrome, Edge, Opera and Firefox */
+  margin: 0.25rem;
+}

@@ -1,0 +1,24 @@
+.download-button {
+  background-color: var(--border-color);
+  font-size: 1.25rem;
+  font-weight: 600;
+  width: 8rem;
+  height: 3rem;
+  border: 3px solid var(--border-color);
+  border-radius: 15px;
+  color: var(--guideline-inner);
+
+  transition: color 0.2s ease-out;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.download-button:disabled {
+  background-color: var(--container-fill);
+  color: var(--deactive-color);
+  font-weight: 400;
+}
+.download-button:active {
+  background-color: var(--container-fill);
+  color: var(--text-color);
+  cursor: pointer;
+}

@@ -1,0 +1,21 @@
+.footer_wrapper {
+    display: flex;
+    z-index: 2;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1.2rem;
+    text-align: center;
+}
+
+.footer_icon {
+    color: #000;
+    font-size: 1.6rem;
+}
+
+.no-underline {
+    text-decoration: none;
+}
+
+.fw-light {
+    font-weight: 400;
+}

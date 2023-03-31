@@ -1,0 +1,39 @@
+.calendar-input {
+  width: 100%;
+  height: 10rem;
+  white-space: nowrap;
+  overflow: auto;
+  margin: auto;
+  box-sizing: border-box;
+  background-color: var(--container-fill);
+  border-radius: 10px;
+  border: 3px solid var(--border-color);
+  box-shadow: none;
+  -webkit-appearance: none;
+  font-size: 1rem;
+  outline: none;
+  padding: 20px;
+  resize: none;
+  scrollbar-width: none;
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+.calendar-input::placeholder {
+  font-weight: bold;
+  color: var(--deactive-color);
+}
+.calendar-input::-webkit-scrollbar {
+  display: none;
+}
+
+.calendar-input:focus {
+  border-width: 4px;
+  padding: 19px;
+}
+@media (max-width: 700px) {
+  .calendar-input:focus {
+    border: 2.5px solid var(--border-color);
+    padding: 9.5px;
+  }
+}

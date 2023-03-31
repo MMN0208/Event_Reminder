@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
+
+.file-usage-guide_question {
+  background-color: var(--container-fill);
+  border: 3px solid var(--border-color);
+  border-radius: 10px;
+  margin-top: 0.5rem;
+  overflow: hidden;
+  font-size: 1.2rem;
+  min-height: 1.2rem;
+  padding: 1rem;
+  margin-bottom: 0;
+  z-index: 2;
+  position: relative;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                   supported by Chrome, Edge, Opera and Firefox */
+}
+
+.arrow {
+  transition: transform 2s ease;
+}
+
+.point-down {
+  transform: rotate(90deg);
+}
+
+.question {
+  padding-left: 1rem;
+}
+
+.file-usage-guide_wrapper {
+  position: relative;
+  z-index: 2;
+}
+.file-usage-guide {
+  overflow: hidden;
+  transition: max-height 1s ease-in-out;
+  background-color: var(--container-fill);
+  border-radius: 10px;
+  border: 3px solid var(--border-color);
+  z-index: 1;
+  position: relative;
+  margin-top: calc(-10px);
+}
+
+.file-usage-guide-show {
+  transition: max-height 1s ease-in-out;
+  max-height: 800px;
+}
+
+.file-usage-guide-hide {
+  max-height: 0;
+}
+
+i.highlight {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+code {
+  font-family: "Fira Code", monospace;
+}
+
+.faq-section {
+  padding: 0 1rem;
+}
+
+.faq-section:first-child {
+  margin-top: 2rem;
+}
+
+.faq-section > p {
+  margin-top: 0;
+}
+
+.faq-section > h2 {
+  margin-bottom: 0.5rem;
+}
+
+.faq-section li {
+  margin: 0.4rem 0;
+}
