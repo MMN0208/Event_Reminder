@@ -3,7 +3,7 @@
   height: 10rem;
   white-space: nowrap;
   overflow: auto;
-  margin: auto;
+  margin: 0.6rem 0;
   box-sizing: border-box;
   background-color: var(--container-fill);
   border-radius: 10px;
@@ -31,9 +31,9 @@
   border-width: 4px;
   padding: 19px;
 }
-@media (max-width: 700px) {
+@media (max-width: 750px) {
   .calendar-input:focus {
     border: 2.5px solid var(--border-color);
-    padding: 9.5px;
+    padding: 20.5px;
   }
 }

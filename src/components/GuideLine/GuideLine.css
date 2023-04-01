@@ -1,7 +1,7 @@
 .guide-line_wrapper {
   display: flex;
   align-items: center;
-  margin: 0.8rem 0 0.8rem 0;
+  margin: 0.6rem 0;
 }
 .guide-line_number {
   font-size: 1.5rem;
