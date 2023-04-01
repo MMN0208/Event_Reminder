@@ -52,17 +52,6 @@ class App extends React.Component {
     FileSaver.saveAs(blob, "export.ics");
   }
 
-  componentDidMount() {
-    let localStorage = window.localStorage;
-    const oldTheme = localStorage.getItem("theme");
-    if (oldTheme !== null) {
-      this.setState({ theme: oldTheme });
-    } else {
-      this.setState({ theme: "light" });
-      localStorage.setItem("theme", "light");
-    }
-  }
-
   render() {
     return (
       <React.StrictMode>
