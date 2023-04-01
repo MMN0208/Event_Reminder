@@ -107,6 +107,7 @@ a:active {
 @media (max-width: 750px) {
   #app_wrapper {
     max-width: 95vw;
+    min-height: 100dvh;
   }
 
   .header_wrapper {
