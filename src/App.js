@@ -77,39 +77,43 @@ class App extends React.Component {
                 </div>
               </div>
             </div>
-            <GuideLine
-              num={1}
-              text={
-                "Copy and paste the timetable or exam schedule of the semester(s) you want to export here."
-              }
-            />
-            <CalendarInputField
-              value={this.state.calendarInput}
-              onChange={this.handleCalendarInputChange}
-            />
-            <GuideLine
-              num={2}
-              text={"Choose the event(s) you want to export."}
-            />
-            <CalendarSelector
-              eventList={this.state.eventList}
-              changeHandler={this.handleCalendarSelect}
-            />
-            <GuideLine
-              num={3}
-              text={"Select Download to download the ics file."}
-            />
-            <div className="button_wrapper">
-              <DownloadButton
-                isDownloadable={
-                  this.state.eventList.length !== 0 &&
-                  this.state.eventList.filter((c) => c.selected).length !== 0
+            <div class="body_wrapper">
+              <GuideLine
+                num={1}
+                text={
+                  "Copy and paste the timetable or exam schedule of the semester(s) you want to export here."
                 }
-                clickHandler={this.handleDownload}
               />
+              <CalendarInputField
+                value={this.state.calendarInput}
+                onChange={this.handleCalendarInputChange}
+              />
+              <GuideLine
+                num={2}
+                text={"Choose the event(s) you want to export."}
+              />
+              <CalendarSelector
+                eventList={this.state.eventList}
+                changeHandler={this.handleCalendarSelect}
+              />
+              <GuideLine
+                num={3}
+                text={"Select Download to download the ics file."}
+              />
+              <div className="button_wrapper">
+                <DownloadButton
+                  isDownloadable={
+                    this.state.eventList.length !== 0 &&
+                    this.state.eventList.filter((c) => c.selected).length !== 0
+                  }
+                  clickHandler={this.handleDownload}
+                />
+              </div>
+              <FileUsageGuide />
             </div>
-            <FileUsageGuide />
-            <Footer />
+            <div class="footer_wrapper">
+              <Footer />
+            </div>
           </div>
         </div>
       </React.StrictMode>
