@@ -10,6 +10,7 @@
   box-shadow: none;
   -webkit-appearance: none;
   font-size: 1rem;
+  line-height: 1.4;
   outline: none;
   padding: 20px;
   resize: none;
@@ -21,6 +22,7 @@
 .calendar-input::placeholder {
   font-weight: bold;
   color: var(--deactive-color);
+  white-space: pre;
 }
 .calendar-input::-webkit-scrollbar {
   display: none;
@@ -30,6 +32,7 @@
   border-width: 4px;
   padding: 19px;
 }
+
 @media (max-width: 750px) {
   .calendar-input:focus {
     border: 2.5px solid var(--border-color);

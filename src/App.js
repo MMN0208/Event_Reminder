@@ -77,7 +77,7 @@ class App extends React.Component {
                 </div>
               </div>
             </div>
-            <div class="body_wrapper">
+            <div className="body_wrapper">
               <GuideLine
                 num={1}
                 text={
@@ -111,7 +111,7 @@ class App extends React.Component {
               </div>
               <FileUsageGuide />
             </div>
-            <div class="footer_wrapper">
+            <div className="footer_wrapper">
               <Footer />
             </div>
           </div>
