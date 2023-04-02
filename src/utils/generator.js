@@ -1,66 +1,106 @@
 import { v4 as uuidv4 } from 'uuid';
 
-// function genTimeString(week, dayOfWeek, time) { // time in the format hh:mm
-//     let times = time.match(/\d+/g);
+function getDateOfFirstDayOfFirstWeek(year) {
+    const date = new Date(year, 0, 1);
+    if ((date.getDay() + 6) % 7 === 0) return date;
+    if ((date.getDay() + 6) % 7 < 4) {
+        date.setDate(date.getDate() - (date.getDay() + 6) % 7);
+        return date;
+    } else {
+        date.setDate(8 - (date.getDay() + 6) % 7);
+        return date;
+    }
+}
 
-//     let date = new Date(2023, 0, 2, times[0], times[1]); //start of week 1 used to calculate using offset
+function classToTimeString(day, week, year, time) {
+    let times = time.match(/\d+/g);
+    let date = getDateOfFirstDayOfFirstWeek(year);
+    date.setHours(times[0], times[1]);
 
-//     const weekOfset = week - 1;
-//     const dayOfset = dayOfWeek - 2;
+    const week_offset = week - 1;
+    const day_offset = day - 2;
 
-//     date.setDate(date.getDate() + (weekOfset * 7) + dayOfset);
-//     let timeString = date.toISOString();
+    date.setDate(date.getDate() + (week_offset * 7) + day_offset);
+    let timeString = date.toISOString();
 
-//     return (timeString.split('.')[0] + 'Z').replace(/-/g, '').replace(/:/g, '');
-// }
+    return (timeString.split('.')[0] + 'Z').replace(/-/g, '').replace(/:/g, '');
+}
 
-function toTimeString(day, month, year, time) {
+function examToTimeString(day, month, year, time) {
     let monthInd = parseInt(month) - 1;
     let date = new Date(year, monthInd, day, time[0], time[1]);
     let timeString = date.toISOString();
     return (timeString.split('.')[0] + 'Z').replace(/-/g, '').replace(/:/g, '');
 }
 
-function generateEvent(clss) {
-    let summary = ''
-    if (clss.type === 0) {
-        summary = 'Thi giữa kỳ ' + clss.name;
-    }
-    else {
-        summary = 'Thi cuối kỳ ' + clss.name;
-    }
+function generateEvent(event) {
+    if (event.event_type === 1) {
+        let summary = '';
+        if (event.exam_type === 0) {
+            summary = 'Thi giữa kỳ ' + event.name;
+        }
+        else {
+            summary = 'Thi cuối kỳ ' + event.name;
+        }
 
-    let end_time = [];
-    end_time[0] = parseInt(clss.time[0]) + 1;
-    end_time[1] = parseInt(clss.time[1]);
+        let end_time = [];
+        end_time[0] = parseInt(event.time[0]) + 1;
+        end_time[1] = parseInt(event.time[1]);
 
-    let content = `BEGIN:VEVENT
+        let content = `BEGIN:VEVENT
 UID:${uuidv4()}
 DTSTAMP:${(new Date().toISOString().split('.')[0] + 'Z').replace(/-/g, '').replace(/:/g, '')}
 SUMMARY:${summary}
-DESCRIPTION:Mã môn: ${clss.ID}\\nMã lớp: ${clss.group}
-LOCATION:${clss.room}
-DTSTART:${toTimeString(clss.day, clss.month, clss.year, clss.time)}
-DTEND:${toTimeString(clss.day, clss.month, clss.year, end_time)}
+DESCRIPTION:Mã môn: ${event.ID}\\nMã lớp: ${event.group}
+LOCATION:${event.room}
+DTSTART:${examToTimeString(event.day, event.month, event.year, event.time)}
+DTEND:${examToTimeString(event.day, event.month, event.year, end_time)}
 BEGIN:VALARM
 TRIGGER:-PT48H
 DURATION:PT15M
 ACTION:DISPLAY
 DESCRIPTION:${summary}
 END:VALARM
-END:VEVENT`
-    return content;
+END:VEVENT`;
+        return content;
+    }
+    else {
+        let summary = 'Lớp ' + event.name;
+        let repeatTime = []
+
+        for (let i = 1; i < event.week.length; i++) {
+            repeatTime.push(classToTimeString( event.day, event.week[i], event.year, event.time[0]))
+        }
+
+        let content = `BEGIN:VEVENT
+UID:${uuidv4()}
+DTSTAMP:${(new Date().toISOString().split('.')[0] + 'Z').replace(/-/g, '').replace(/:/g, '')}
+SUMMARY:${summary}
+DESCRIPTION:Mã môn: ${event.ID}\\nMã lớp: ${event.group}
+LOCATION:${event.room}, ${event.campus}
+DTSTART:${classToTimeString(event.day, event.week[0], event.year, event.time[0])}
+DTEND:${classToTimeString(event.day, event.week[0], event.year, event.time[1])}
+RDATE:${repeatTime.join(',')}
+BEGIN:VALARM
+TRIGGER:-PT30M
+DURATION:PT15M
+ACTION:DISPLAY
+DESCRIPTION:${summary}
+END:VALARM
+END:VEVENT`;
+        return content;
+    }
 }
 
-function generateICSFileContent(classList) {
+function generateICSFileContent(eventList) {
     let content = `BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//exam_reminder//`;
+PRODID:-//event_reminder//`;
 
-    for (let i = 0; i < classList.length; i++) {
-        if (classList[i].selected) {
+    for (let i = 0; i < eventList.length; i++) {
+        if (eventList[i].selected) {
             content += `
-${generateEvent(classList[i])}`
+${generateEvent(eventList[i])}`
         }
     }
 
@@ -69,5 +109,4 @@ END:VCALENDAR`;
     return content;
 }
 
-
-export { toTimeString, generateICSFileContent };
+export { generateICSFileContent };

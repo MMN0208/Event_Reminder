@@ -18,7 +18,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       calendarInput: "", // the input field of calendar checkbox
-      classList: [], // the list of class after parsing the input
+      eventList: [], // the list of class after parsing the input
       timeTableValid: false,
     };
     this.handleCalendarInputChange = this.handleCalendarInputChange.bind(this);
@@ -29,27 +29,27 @@ class App extends React.Component {
   handleCalendarInputChange(event) {
     this.setState({ calendarInput: event.target.value });
 
-    const classList = parseCalendarInput(event.target.value);
+    const eventList = parseCalendarInput(event.target.value);
 
-    this.setState({ classList });
+    this.setState({ eventList });
   }
 
   handleCalendarSelect(event) {
     const targetSignature = event.target.value;
-    let classList = this.state.classList;
-    for (let i = 0; i < classList.length; i++) {
-      if (classList[i].signature === targetSignature) {
-        classList[i].selected = !classList[i].selected;
+    let eventList = this.state.eventList;
+    for (let i = 0; i < eventList.length; i++) {
+      if (eventList[i].signature === targetSignature) {
+        eventList[i].selected = !eventList[i].selected;
         break;
       }
     }
-    this.setState({ classList });
+    this.setState({ eventList });
   }
 
   handleDownload() {
-    const content = generateICSFileContent(this.state.classList);
+    const content = generateICSFileContent(this.state.eventList);
     let blob = new Blob([content], { type: "text/calendar" });
-    FileSaver.saveAs(blob, "export.ics");
+    FileSaver.saveAs(blob, "schedule.ics");
   }
 
   render() {
@@ -63,7 +63,7 @@ class App extends React.Component {
                   <img src="https://upload.wikimedia.org/wikipedia/commons/d/de/HCMUT_official_logo.png" alt="HCMUT logo" className="header_img"></img>
                   <div className="header">
                     <p className="header_one">
-                      Exam
+                      Event
                     </p>
                     <p className="header_two">
                       Reminder
@@ -72,7 +72,7 @@ class App extends React.Component {
                 </div>
                 <div className="header_row header_slogan">
                   <p>
-                    To never forget your exams
+                    Reminds you of lectures and exams
                   </p>
                 </div>
               </div>
@@ -80,7 +80,7 @@ class App extends React.Component {
             <GuideLine
               num={1}
               text={
-                "Copy and paste the exam schedule of semester(s) you want to export here."
+                "Copy and paste the timetable or exam schedule of the semester(s) you want to export here."
               }
             />
             <CalendarInputField
@@ -89,10 +89,10 @@ class App extends React.Component {
             />
             <GuideLine
               num={2}
-              text={"Choose the exam(s) you want to export."}
+              text={"Choose the event(s) you want to export."}
             />
             <CalendarSelector
-              classList={this.state.classList}
+              eventList={this.state.eventList}
               changeHandler={this.handleCalendarSelect}
             />
             <GuideLine
@@ -102,8 +102,8 @@ class App extends React.Component {
             <div className="button_wrapper">
               <DownloadButton
                 isDownloadable={
-                  this.state.classList.length !== 0 &&
-                  this.state.classList.filter((c) => c.selected).length !== 0
+                  this.state.eventList.length !== 0 &&
+                  this.state.eventList.filter((c) => c.selected).length !== 0
                 }
                 clickHandler={this.handleDownload}
               />

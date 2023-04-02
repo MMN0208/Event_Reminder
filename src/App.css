@@ -131,3 +131,36 @@ a:active {
     margin-bottom: 2rem;
   }
 }
+
+@media (max-width: 400px) {
+  #app_wrapper {
+    max-width: 90vw;
+    min-height: 100dvh;
+  }
+
+  .header_wrapper {
+    margin-bottom: 0.6rem;
+  }
+
+  .header_img {
+    height: 3.6rem;
+  }
+
+  .header {
+    font-size: 1.8rem;
+    margin-right: 1.6rem;
+  }
+
+  .header_two {
+    margin-left: 0.4rem;
+  }
+
+  .header_slogan {
+    font-size: 1rem;
+    margin-top: -3rem;
+  }
+
+  .header_separator {
+    margin-bottom: 2rem;
+  }
+}

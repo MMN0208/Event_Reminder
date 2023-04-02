@@ -21,7 +21,7 @@ function FileUsageGuide() {
                     <li>Select the <i className='highlight'>cogwheel</i> at the top right corner, a menu will appear, then select <i className='highlight'>Settings</i>.</li>
                     <li>Select <i className='highlight'>Import & export</i> on the left side of the page.</li>
                     <li>Select <i className='highlight'>Select file from your computer</i>.</li>
-                    <li>Select the file you just downloaded, its default name is <code>exam.ics</code>.</li>
+                    <li>Select the file you just downloaded, its default name is <code>schedule.ics</code>.</li>
                     <li>Choose the calendar you would want to hold the imported events. You can refer to <a href="https://support.google.com/calendar/answer/37095?hl=vi" className='link'>here</a> to create more calendars for your account.</li>
                     <li>Select <i className='highlight'>Import</i>.</li>
                 </ol>
