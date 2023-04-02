@@ -1,6 +1,6 @@
 {
-  "short_name": "Exam Reminder",
-  "name": "Convert Exam Schedule to Google Calendar",
+  "short_name": "Event Reminder",
+  "name": "Convert Timetable and Exam Schedule to Google Calendar",
   "icons": [
     {
       "src": "favicon.png",
