@@ -69,7 +69,9 @@ function parseCalendarInput(input) {
                         room: room[exam_type],
                         selected: true,
                         group,
-                        exam_type
+                        exam_type,
+                        semester,
+                        ay
                     });
                 }
                 else continue;
@@ -120,7 +122,9 @@ function parseCalendarInput(input) {
                 room,
                 campus,
                 selected: true,
-                group
+                group,
+                semester,
+                ay
             });
         }
         else continue;
