@@ -33,8 +33,8 @@ function FileUsageGuide() {
                 </ol>
             </section>
             <section className="faq-section">
-                <h2>I ran into issues when using the app, the software generated incorrect results.</h2>
-                <p>I am so sorry to hear that. You can let me know at my <a href="https://www.facebook.com/zucczucczucc16.8" target="_blank" rel="noopener noreferrer" className='link'>Facebook</a>. I will be glad to receive your feedback.</p>
+                <h2>Regarding feedback</h2>
+                <p>Please spend a few minutes to give us your feedback in <a href="https://forms.gle/U3MydtV2ZWwMuirPA" target="_blank" rel="noopener noreferrer" className='link'>this form</a>. We will be glad to receive your feedback.</p>
             </section>
             
         </div>

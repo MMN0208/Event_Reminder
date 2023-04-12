@@ -19,7 +19,6 @@ class App extends React.Component {
     this.state = {
       calendarInput: "", // the input field of calendar checkbox
       eventList: [], // the list of class after parsing the input
-      timeTableValid: false,
     };
     this.handleCalendarInputChange = this.handleCalendarInputChange.bind(this);
     this.handleCalendarSelect = this.handleCalendarSelect.bind(this);
