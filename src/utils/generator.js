@@ -1,5 +1,16 @@
 import { v4 as uuidv4 } from 'uuid';
 
+function getMissingWeeks(start, end) {
+    const weeks = []
+    if (start < end - 1) {
+        let mid = Math.floor((start + end) / 2);
+        weeks.push(...getMissingWeeks(start, mid));
+        weeks.push(mid)
+        weeks.push(...getMissingWeeks(mid, end));
+    }
+    return weeks;
+}
+
 function getDateOfFirstDayOfFirstWeek(year) {
     const date = new Date(year, 0, 1);
     if ((date.getDay() + 6) % 7 === 0) return date;
@@ -66,10 +77,16 @@ END:VEVENT`;
     }
     else {
         let summary = 'Lớp ' + event.name;
-        let repeatTime = []
+        let numOfWeeks = event.week.length;
+        let missingWeeks = []
+        let missingTime = []
 
-        for (let i = 1; i < event.week.length; i++) {
-            repeatTime.push(classToTimeString( event.day, event.week[i], event.year, event.time[0]))
+        for (let i = 0; i < numOfWeeks - 1; i++) {
+            missingWeeks.push(...getMissingWeeks(parseInt(event.week[i]), parseInt(event.week[i + 1])));
+        }
+
+        for (let i = 0 ; i < missingWeeks.length; i++) {
+            missingTime.push(classToTimeString(event.day, missingWeeks[i], event.year, event.time[0]));
         }
 
         let content = `BEGIN:VEVENT
@@ -80,7 +97,8 @@ DESCRIPTION:Mã môn: ${event.ID}\\nMã lớp: ${event.group}
 LOCATION:${event.room}, ${event.campus}
 DTSTART:${classToTimeString(event.day, event.week[0], event.year, event.time[0])}
 DTEND:${classToTimeString(event.day, event.week[0], event.year, event.time[1])}
-RDATE:${repeatTime.join(',')}
+RRULE:FREQ=WEEKLY;INTERVAL=1;UNTIL=${classToTimeString(event.day, event.week[numOfWeeks-1], event.year, event.time[0])}
+EXDATE:${missingTime.join(',')}
 BEGIN:VALARM
 TRIGGER:-PT30M
 DURATION:PT15M
