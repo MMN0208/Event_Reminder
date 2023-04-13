@@ -21,7 +21,7 @@
 }
 
 .arrow {
-  transition: transform 2s ease;
+  transition: transform 1.5s ease;
 }
 
 .point-down {
@@ -48,12 +48,12 @@
 }
 
 .file-usage-guide-show {
-  transition: max-height 1.5s ease-in;
+  transition: max-height 1s ease-in;
   max-height: 1000px;
 }
 
 .file-usage-guide-hide {
-  transition: max-height 1.5s ease-out;
+  transition: max-height 1s ease-out;
   max-height: 0;
 }
 
