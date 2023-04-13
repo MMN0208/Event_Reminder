@@ -34,9 +34,8 @@ function FileUsageGuide() {
                 </ol>
                 <h3>For smartphone users:</h3>
                 <ol>
-                    <li>Open the file you just downloaded, its default name is <code>schedule.ics</code>.</li>
-                    <li>Each operating system (Android/iOS) will have its own notification about importing events into its default calendar app.</li>
-                    <li>Follow the app's instructions.</li>
+                    <li>Press the <i className='highlight'>Download</i> button, a menu will appear.</li>
+                    <li>Press <i className='highlight'>Add events</i> to add the events into the device's calendar app.</li>
                 </ol>
             </section>
             <section className="faq-section">
