@@ -19,6 +19,8 @@ class App extends React.Component {
     this.state = {
       calendarInput: "", // the input field of calendar checkbox
       eventList: [], // the list of class after parsing the input
+      filterList: [],
+      currFilter: []
     };
     this.handleCalendarInputChange = this.handleCalendarInputChange.bind(this);
     this.handleCalendarSelect = this.handleCalendarSelect.bind(this);
@@ -28,9 +30,17 @@ class App extends React.Component {
   handleCalendarInputChange(event) {
     this.setState({ calendarInput: event.target.value });
 
-    const eventList = parseCalendarInput(event.target.value);
+    const [filterList, eventList] = parseCalendarInput(event.target.value);
 
-    this.setState({ eventList });
+    const currFilter = [];
+
+    if (filterList.length > 0) {
+      currFilter.push(filterList[0]);
+    }
+
+    console.log(currFilter);
+
+    this.setState({ filterList, eventList, currFilter });
   }
 
   handleCalendarSelect(event) {
@@ -93,6 +103,7 @@ class App extends React.Component {
               />
               <CalendarSelector
                 eventList={this.state.eventList}
+                currFilter={this.state.currFilter}
                 changeHandler={this.handleCalendarSelect}
               />
               <GuideLine

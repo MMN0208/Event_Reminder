@@ -5,6 +5,7 @@ function parseCalendarInput(input) {
     let line = input.split('\n');
 
     const lineCount = line.length;
+    let filterList = [];
     let eventList = [];
 
     let semester = null;
@@ -27,7 +28,7 @@ function parseCalendarInput(input) {
                 ay = [];
                 ay.push((event_type === 1) ? semester_ay[2].trim() : semester_ay[5].trim());
                 ay.push((event_type === 1) ? semester_ay[3].trim() : semester_ay[6].trim());
-                console.log(semester, ay);
+                filterList.push({semester, ay});
             }
             else continue;
         }
@@ -129,8 +130,8 @@ function parseCalendarInput(input) {
         }
         else continue;
     }
-    console.log(eventList);
-    return eventList;
+    console.log(filterList, eventList);
+    return [filterList, eventList];
 }
 
 export { parseCalendarInput };
