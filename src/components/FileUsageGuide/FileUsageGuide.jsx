@@ -9,12 +9,12 @@ function FileUsageGuide() {
     return <div className={'file-usage-guide_wrapper'}>
         <p className="file-usage-guide_question" onClick={clickHandler}>
             <i className={`fas fa-chevron-right arrow ${showDetails ? 'point-down' : 'point-right'}`}></i>
-            <span className='question'>Instructions & Feedback</span>
+            <span className='question'>.ics File Instructions & Feedback</span>
         </p>
 
         <div className={`file-usage-guide ${showDetails ? 'file-usage-guide-show' : 'file-usage-guide-hide'}`}>
             <section className="faq-section">
-                <h2>How can I use the ics file?</h2>
+                <h2>How to use the .ics file</h2>
                 <h3>For PC/laptop users:</h3>
                 <h4>Import into Google Calendar</h4>
                 <ol>
@@ -39,7 +39,7 @@ function FileUsageGuide() {
                 </ol>
             </section>
             <section className="faq-section">
-                <h2>Regarding feedback</h2>
+                <h2>Providing feedback</h2>
                 <p>Please spend a few minutes to give us your feedback in <a href="https://forms.gle/U3MydtV2ZWwMuirPA" target="_blank" rel="noopener noreferrer" className='link'>this form</a>. We will be glad to receive your feedback.</p>
             </section>
             
