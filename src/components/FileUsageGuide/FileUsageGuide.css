@@ -45,7 +45,7 @@
   border: 3px solid var(--border-color);
   z-index: 1;
   position: relative;
-  margin-top: calc(-20px);
+  margin-top: -2.0rem;
 }
 
 .file-usage-guide-show {
@@ -84,4 +84,5 @@ code {
 
 .faq-section li {
   margin: 0.4rem 0;
+  line-height: 1.4;
 }

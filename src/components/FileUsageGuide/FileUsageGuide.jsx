@@ -16,19 +16,26 @@ function FileUsageGuide() {
             <section className="faq-section">
                 <h2>How can I use the ics file?</h2>
                 <h3>For PC/laptop users:</h3>
+                <h4>Import into Google Calendar</h4>
                 <ol>
                     <li>Go to the following address: <a target="_blank" rel="noopener noreferrer" href="https://calendar.google.com" className='link'>https://calendar.google.com</a>.</li>
-                    <li>Select the <i className='highlight'>cogwheel</i> at the top right corner, a menu will appear, then select <i className='highlight'>Settings</i>.</li>
-                    <li>Select <i className='highlight'>Import & export</i> on the left side of the page.</li>
+                    <li>Select <i className='fa fa-gear highlight'></i> at the top right corner, then select <i className='highlight'>Settings</i>.</li>
+                    <li>Select <i className='highlight'>Import & export</i> on the sidebar.</li>
                     <li>Select <i className='highlight'>Select file from your computer</i>.</li>
                     <li>Select the file you just downloaded, its default name is <code>schedule.ics</code>.</li>
                     <li>Choose the calendar you would want to hold the imported events. You can refer to <a href="https://support.google.com/calendar/answer/37095?hl=vi" className='link'>here</a> to create more calendars for your account.</li>
                     <li>Select <i className='highlight'>Import</i>.</li>
                 </ol>
+                <h4>Import into default calendar application</h4>
+                <ol>
+                    <li>Open the file you just downloaded, its default name is <code>schedule.ics</code>.</li>
+                    <li>Each operating system (Windows/MacOS/Linux) will have its own notification about importing events into its calendar app.</li>
+                    <li>Follow the app's instructions.</li>
+                </ol>
                 <h3>For smartphone users:</h3>
                 <ol>
-                    <li>Open the file you just downloaded from your browser or the Files app of your phone.</li>
-                    <li>Each operating system (Android/iOS) will have its own notification about importing events into its Calendar app.</li>
+                    <li>Open the file you just downloaded, its default name is <code>schedule.ics</code>.</li>
+                    <li>Each operating system (Android/iOS) will have its own notification about importing events into its default calendar app.</li>
                     <li>Follow the app's instructions.</li>
                 </ol>
             </section>
