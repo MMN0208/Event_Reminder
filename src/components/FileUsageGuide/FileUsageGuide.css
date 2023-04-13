@@ -50,7 +50,7 @@
 
 .file-usage-guide-show {
   transition: max-height 1s ease-in-out;
-  max-height: 800px;
+  max-height: 100dvh;
 }
 
 .file-usage-guide-hide {
