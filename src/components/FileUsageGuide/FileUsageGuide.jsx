@@ -9,7 +9,7 @@ function FileUsageGuide() {
     return <div className={'file-usage-guide_wrapper'}>
         <p className="file-usage-guide_question" onClick={clickHandler}>
             <i className={`fas fa-chevron-right arrow ${showDetails ? 'point-down' : 'point-right'}`}></i>
-            <span className='question'>.ics File Instructions & Feedback</span>
+            <span className='question'>File Usage Guide & Feedback</span>
         </p>
 
         <div className={`file-usage-guide ${showDetails ? 'file-usage-guide-show' : 'file-usage-guide-hide'}`}>
@@ -26,11 +26,11 @@ function FileUsageGuide() {
                     <li>Choose the calendar you would want to hold the imported events. You can refer to <a href="https://support.google.com/calendar/answer/37095?hl=vi" className='link'>here</a> to create more calendars for your account.</li>
                     <li>Select <i className='highlight'>Import</i>.</li>
                 </ol>
-                <h4>Import into default calendar application</h4>
+                <h4>Import into default calendar app</h4>
                 <ol>
                     <li>Open the file you just downloaded, its default name is <code>schedule.ics</code>.</li>
-                    <li>Each operating system (Windows/MacOS/Linux) will have its own notification about importing events into its calendar app.</li>
-                    <li>Follow the app's instructions.</li>
+                    <li>Each operating system will have its own popup menu for importing events into its calendar app.</li>
+                    <li>Select <i className='highlight'>Add events</i> to add the events into the device's calendar app.</li>
                 </ol>
                 <h3>For smartphone users:</h3>
                 <ol>
