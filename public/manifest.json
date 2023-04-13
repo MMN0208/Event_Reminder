@@ -1,6 +1,6 @@
 {
-  "short_name": "Event Reminder",
-  "name": "Convert Timetable and Exam Schedule to Google Calendar",
+  "short_name": "BK Event Reminder",
+  "name": "Convert MyBK timetable and exam schedule into a .ics file",
   "icons": [
     {
       "src": "favicon.png",
