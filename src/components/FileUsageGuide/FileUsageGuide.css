@@ -55,6 +55,7 @@
 .file-usage-guide-hide {
   transition: max-height 1s ease-out;
   max-height: 0;
+  margin-bottom: 1rem;
 }
 
 i.highlight {
