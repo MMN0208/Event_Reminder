@@ -16,7 +16,7 @@
 
 #app {
   width: 100%;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: 'DM Sans', sans-serif;
 
   transition: all 0.2s linear;
 }
@@ -34,7 +34,6 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 0.4rem;
 }
 
 .header_row {
@@ -45,7 +44,7 @@
 }
 
 .header_img {
-  height: 10rem;
+  height: 8rem;
   width: auto;
 }
 
@@ -113,13 +112,8 @@ a:active {
     min-height: 100dvh;
   }
 
-  .header_wrapper {
-    margin-top: 0;
-    margin-bottom: 0.2rem;
-  }
-
   .header_img {
-    height: 9rem;
+    height: 7rem;
   }
 
   .header {
@@ -143,7 +137,7 @@ a:active {
   }
 
   .header_img {
-    height: 8rem;
+    height: 6rem;
   }
 
   .header {
