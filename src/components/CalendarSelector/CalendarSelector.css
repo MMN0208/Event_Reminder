@@ -14,13 +14,6 @@
   transition: all 0.06s ease-out;
 }
 
-@media (max-width: 750px) {
-  .class-selector_label::before {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-}
-
 .calendar-selector_wrapper {
   background-color: var(--container-fill);
   border: 3px solid var(--border-color);
@@ -49,4 +42,22 @@
   user-select: none; /* Non-prefixed version, currently
                                    supported by Chrome, Edge, Opera and Firefox */
   margin: 0.25rem;
+}
+
+@media (max-width: 750px) {
+  .class-selector_label::before {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .class-selector_label::before {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .class-selector_label {
+    font-size: 1rem;
+  }
 }

@@ -7,6 +7,7 @@ import CalendarSelector from "./components/CalendarSelector/CalendarSelector";
 import DownloadButton from "./components/DownloadButton/DownloadButton";
 import FileUsageGuide from "./components/FileUsageGuide/FileUsageGuide";
 import Footer from "./components/Footer/Footer";
+import logo from "./assets/logo.png";
 
 import { parseCalendarInput } from "./utils/parser";
 import { generateICSFileContent } from "./utils/generator";
@@ -59,20 +60,7 @@ class App extends React.Component {
             <div className="header_wrapper">
               <div className="header_col">
                 <div className="header_row">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/d/de/HCMUT_official_logo.png" alt="HCMUT logo" className="header_img"></img>
-                  <div className="header">
-                    <p className="header_one">
-                      Event
-                    </p>
-                    <p className="header_two">
-                      Reminder
-                  </p>  
-                  </div>
-                </div>
-                <div className="header_row header_slogan">
-                  <p>
-                    Reminds you of lectures and exams
-                  </p>
+                  <img src={logo} alt="BK Reminder logo" className="header_img"></img>
                 </div>
               </div>
             </div>

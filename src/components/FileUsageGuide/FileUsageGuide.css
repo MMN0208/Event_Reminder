@@ -87,3 +87,37 @@ code {
   margin: 0.4rem 0;
   line-height: 1.4;
 }
+
+@media (max-width: 400px) {
+  .file-usage-guide_question {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  i.highlight {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .faq-section:first-child {
+    margin-top: 1.6rem;
+  }
+
+  .faq-section > h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .faq-section > h3 {
+    font-size: 1.1rem;
+  }
+
+  .faq-section > h4 {
+    margin-top: 0;
+  }
+
+  .faq-section li {
+    margin: 0.2rem 0;
+    line-height: 1.4;
+  }
+}

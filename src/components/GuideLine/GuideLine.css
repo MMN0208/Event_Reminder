@@ -3,6 +3,7 @@
   align-items: center;
   margin: 0.8rem 0;
 }
+
 .guide-line_number {
   font-size: 1.5rem;
   display: flex;
@@ -17,7 +18,21 @@
   margin-right: 1rem;
   font-weight: 500;
 }
+
 .guide-line_description {
   font-size: 1.2rem;
   line-height: 1.4;
+}
+
+@media (max-width: 400px) {
+  .guide-line_number {
+    font-size: 1rem;
+    min-width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  .guide-line_description {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
 }

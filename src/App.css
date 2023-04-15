@@ -34,7 +34,7 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin-bottom: 0.2rem;
+  margin-top: 1rem;
 }
 
 .header_row {
@@ -45,9 +45,8 @@
 }
 
 .header_img {
-  height: 4.8rem;
+  height: 10rem;
   width: auto;
-  margin-right: 1.4rem;
 }
 
 .header {
@@ -114,12 +113,8 @@ a:active {
     min-height: 100dvh;
   }
 
-  .header_wrapper {
-    margin-bottom: 0.6rem;
-  }
-
   .header_img {
-    height: 4rem;
+    height: 9rem;
   }
 
   .header {
@@ -142,12 +137,8 @@ a:active {
     min-height: 100dvh;
   }
 
-  .header_wrapper {
-    margin-bottom: 0.6rem;
-  }
-
   .header_img {
-    height: 3.6rem;
+    height: 8rem;
   }
 
   .header {
@@ -166,5 +157,9 @@ a:active {
 
   .header_separator {
     margin-bottom: 2rem;
+  }
+
+  .button_wrapper {
+    margin-top: 0.8rem;
   }
 }

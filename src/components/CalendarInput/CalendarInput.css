@@ -39,3 +39,15 @@
     padding: 20.5px;
   }
 }
+
+@media (max-width: 400px) {
+  .calendar-input {
+    font-size: 0.8rem;
+    padding: 12px;
+  }
+
+  .calendar-input:focus {
+    border: 2.5px solid var(--border-color);
+    padding: 12.5px;
+  }
+}
