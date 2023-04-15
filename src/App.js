@@ -77,7 +77,7 @@ class App extends React.Component {
               />
               <GuideLine
                 num={2}
-                text={"Choose which event(s) to import."}
+                text={"Choose which event(s) to keep or omit."}
               />
               <CalendarSelector
                 eventList={this.state.eventList}

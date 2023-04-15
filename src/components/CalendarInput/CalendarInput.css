@@ -39,6 +39,7 @@
 
 @media (max-width: 400px) {
   .calendar-input {
+    height: 8rem;
     font-size: 0.8rem;
     padding: 10px 12px;
   }
