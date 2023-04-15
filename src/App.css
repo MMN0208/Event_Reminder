@@ -114,7 +114,8 @@ a:active {
   }
 
   .header_wrapper {
-    margin-bottom: 0.4rem;
+    margin-top: 0;
+    margin-bottom: 0.2rem;
   }
 
   .header_img {
@@ -139,10 +140,6 @@ a:active {
   #app_wrapper {
     max-width: 90vw;
     min-height: 100dvh;
-  }
-
-  .header_wrapper {
-    margin-bottom: 0.4rem;
   }
 
   .header_img {
