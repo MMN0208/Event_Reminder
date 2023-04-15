@@ -68,7 +68,7 @@ class App extends React.Component {
               <GuideLine
                 num={1}
                 text={
-                  "Paste the timetable or exam schedule of the targeted semester(s) here."
+                  "Paste the timetable or exam schedule of the semester(s) you need here."
                 }
               />
               <CalendarInputField
@@ -77,7 +77,7 @@ class App extends React.Component {
               />
               <GuideLine
                 num={2}
-                text={"Choose which event(s) to keep or omit."}
+                text={"Choose which event(s) you need."}
               />
               <CalendarSelector
                 eventList={this.state.eventList}
