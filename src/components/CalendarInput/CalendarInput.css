@@ -6,7 +6,7 @@
   box-sizing: border-box;
   background-color: var(--container-fill);
   border-radius: 10px;
-  border: 3px solid var(--border-color);
+  border: 2px dashed var(--border-color);
   box-shadow: none;
   -webkit-appearance: none;
   font-size: 1rem;
@@ -24,30 +24,26 @@
   color: var(--deactive-color);
   white-space: pre;
 }
+
 .calendar-input::-webkit-scrollbar {
   display: none;
 }
 
 .calendar-input:focus {
-  border-width: 4px;
+  border: 3px solid var(--border-color);
   padding: 11px 15px;
 }
 
 @media (max-width: 750px) {
-  .calendar-input:focus {
-    border: 2.5px solid var(--border-color);
-    padding: 12.5px 16.5px;
-  }
 }
 
 @media (max-width: 400px) {
   .calendar-input {
     font-size: 0.8rem;
-    padding: 8px 12px;
+    padding: 10px 12px;
   }
 
   .calendar-input:focus {
-    border: 2.5px solid var(--border-color);
-    padding: 8.5px 12.5px;
+    padding: 9px 11px;
   }
 }

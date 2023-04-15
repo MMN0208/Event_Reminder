@@ -4,18 +4,22 @@
   margin: 0.8rem 0;
 }
 
-.guide-line_number {
-  font-size: 1.5rem;
+.guide-line_shape {
   display: flex;
   background-color: var(--guideline-fill);
   color: var(--guideline-inner);
-  text-align: center;
-  min-width: 3rem;
-  height: 3rem;
   border-radius: 50%;
+  text-align: center;
+  min-width: 2.4rem;
+  height: 2.4rem;
   justify-content: center;
   align-items: center;
   margin-right: 1rem;
+  position: relative;
+}
+
+.guide-line_number {
+  font-size: 1.4rem;
   font-weight: 500;
 }
 
@@ -27,8 +31,6 @@
 @media (max-width: 400px) {
   .guide-line_number {
     font-size: 1rem;
-    min-width: 2.8rem;
-    height: 2.8rem;
   }
 
   .guide-line_description {
