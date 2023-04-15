@@ -68,7 +68,7 @@ class App extends React.Component {
               <GuideLine
                 num={1}
                 text={
-                  "Copy and paste the timetable or exam schedule of the semester(s) you want to export here."
+                  "Paste the timetable or exam schedule of the semester(s) to be converted here."
                 }
               />
               <CalendarInputField
@@ -77,7 +77,7 @@ class App extends React.Component {
               />
               <GuideLine
                 num={2}
-                text={"Choose the event(s) you want to export."}
+                text={"Choose which event(s) to import."}
               />
               <CalendarSelector
                 eventList={this.state.eventList}
@@ -85,7 +85,7 @@ class App extends React.Component {
               />
               <GuideLine
                 num={3}
-                text={"Select Download to download the .ics file."}
+                text={"Download the .ics file."}
               />
               <div className="button_wrapper">
                 <DownloadButton
