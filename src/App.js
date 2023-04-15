@@ -68,7 +68,7 @@ class App extends React.Component {
               <GuideLine
                 num={1}
                 text={
-                  "Paste the timetable or exam schedule of the semester(s) to be converted here."
+                  "Paste the timetable or exam schedule of the targeted semester(s) here."
                 }
               />
               <CalendarInputField
