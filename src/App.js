@@ -85,7 +85,7 @@ class App extends React.Component {
               />
               <GuideLine
                 num={3}
-                text={"Select Download to download the ics file."}
+                text={"Select Download to download the .ics file."}
               />
               <div className="button_wrapper">
                 <DownloadButton
