@@ -7,7 +7,6 @@ import CalendarSelector from "./components/CalendarSelector/CalendarSelector";
 import DownloadButton from "./components/DownloadButton/DownloadButton";
 import FileUsageGuide from "./components/FileUsageGuide/FileUsageGuide";
 import Footer from "./components/Footer/Footer";
-import logo from "./assets/logo.png";
 
 import { parseCalendarInput } from "./utils/parser";
 import { generateICSFileContent } from "./utils/generator";
@@ -60,7 +59,7 @@ class App extends React.Component {
             <div className="header_wrapper">
               <div className="header_col">
                 <div className="header_row">
-                  <img src={logo} alt="BK Reminder logo" className="header_img"></img>
+                  <img src="/logo.png" alt="BK Reminder logo" className="header_img"></img>
                 </div>
               </div>
             </div>
