@@ -9,6 +9,7 @@
   border-radius: 15px;
   color: var(--guideline-inner);
 
+  font-family: 'Roboto', sans-serif;
   transition: color 0.2s ease-out;
 }
 
