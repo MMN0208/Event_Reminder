@@ -10,7 +10,6 @@
   color: var(--guideline-inner);
 
   transition: color 0.2s ease-out;
-  font-family: "Roboto Condensed", sans-serif;
 }
 
 .download-button:disabled {
