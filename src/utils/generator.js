@@ -97,8 +97,14 @@ DESCRIPTION:Mã môn: ${event.ID}\\nMã lớp: ${event.group}
 LOCATION:${event.room}, ${event.campus}
 DTSTART:${classToTimeString(event.day, event.week[0], event.year, event.time[0])}
 DTEND:${classToTimeString(event.day, event.week[0], event.year, event.time[1])}
-RRULE:FREQ=WEEKLY;INTERVAL=1;UNTIL=${classToTimeString(event.day, event.week[numOfWeeks-1], event.year, event.time[0])}
-EXDATE:${missingTime.join(',')}
+RRULE:FREQ=WEEKLY;INTERVAL=1;UNTIL=${classToTimeString(event.day, event.week[numOfWeeks-1], event.year, event.time[0])}`;
+
+        if (missingTime.length > 0) {
+            content += `
+EXDATE:${missingTime.join(',')}`;
+        }
+
+        content += `
 BEGIN:VALARM
 TRIGGER:-PT30M
 DURATION:PT15M
@@ -113,7 +119,7 @@ END:VEVENT`;
 function generateICSFileContent(eventList) {
     let content = `BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//event_reminder//`;
+PRODID:BK Reminder`;
 
     for (let i = 0; i < eventList.length; i++) {
         if (eventList[i].selected) {
