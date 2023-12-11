@@ -55,7 +55,7 @@ function parseCalendarInput(input) {
 
             for (let exam_type = 0; exam_type < 2; exam_type++) {
                 if(day[exam_type] !== '' && month[exam_type] !== '' && time[exam_type] != null && room[exam_type] !== '--') {
-                    let year = (semester === '1' && parseInt(month) >= 8) ?  ay[0] : ay[1];
+                    let year = (semester === '1' && parseInt(month[exam_type]) >= 8) ?  ay[0] : ay[1];
 
                     eventList.push({
                         signature: Base64.stringify(sha256(ID + day[exam_type] + month[exam_type] + year + time[exam_type].join('') + room[exam_type])),
